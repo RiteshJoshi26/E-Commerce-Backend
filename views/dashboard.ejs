@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Shop Bags</title>
+    <link rel="stylesheet" href="/stylesheet/dashboard.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">MyStore</div>
+        <ul class="nav-links">
+            <li><a href="" onclick="location.reload()">Home</a></li>
+            <li><a href="/profile/cart">Cart</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Shop Premium Bags</h1>
+        <p>Discover the latest collection of stylish bags</p>
+    </header>
+
+    <!-- Bags Section -->
+    <section class="bag-list">
+        <h2>Available Bags</h2>
+        <div class="bag-grid">
+            <!-- Example Bag Item -->
+            <% showBag.forEach(bag=> { %>
+                <div class="bag-card">
+                    <img src="<%= bag.imgurl %>" alt="Classic Tote">
+                    <h3>
+                        <%= bag.bagName %>
+                    </h3>
+                    <p>$<%= bag.price %>
+                    </p>
+                    <form action="/profile/addtocart" method="post">
+                        <input type="hidden" name="bagId" value="<%= bag._id %>">
+                        <button type='submit' class="add-btn">Add to Cart</button>
+                    </form>
+                </div>
+                <% }) %>
+        </div>
+    </section>
+</body>
+
+</html>

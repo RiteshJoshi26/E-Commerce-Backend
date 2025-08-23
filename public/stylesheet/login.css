@@ -1,0 +1,149 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #2c3e50, #1a1a1a);
+    color: #fff;
+    padding: 20px;
+}
+
+/* Login Card */
+.login-container {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    border-radius: 18px;
+    padding: 40px 35px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    text-align: center;
+}
+
+/* Title */
+.login-container h2 {
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Input Fields */
+.login-container input {
+    width: 90%;
+    padding: 12px 14px;
+    margin: 12px 0;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.login-container input::placeholder {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.login-container input:focus {
+    border-color: #aaa;
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
+}
+
+/* Button */
+.login-container button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #3a7bd5, #3a6073);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 18px;
+    transition: all 0.3s ease;
+}
+
+.login-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(58, 123, 213, 0.35);
+}
+
+/* Footer Text */
+.login-container p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.login-container a {
+    color: #3a7bd5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+/* ===============================
+   Responsive Design
+=================================*/
+
+/* Tablets */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 35px 30px;
+        max-width: 320px;
+    }
+
+    .login-container h2 {
+        font-size: 22px;
+    }
+
+    .login-container input {
+        font-size: 14px;
+        padding: 11px 12px;
+    }
+
+    .login-container button {
+        font-size: 15px;
+        padding: 12px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .login-container {
+        padding: 30px 22px;
+        max-width: 100%;
+    }
+
+    .login-container h2 {
+        font-size: 20px;
+    }
+
+    .login-container input {
+        font-size: 13px;
+        padding: 10px 11px;
+    }
+
+    .login-container button {
+        font-size: 14px;
+        padding: 11px;
+    }
+
+    .login-container p {
+        font-size: 13px;
+    }
+}

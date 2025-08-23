@@ -1,0 +1,91 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #2c3e50, #1a1a1a);
+    color: #fff;
+}
+
+/* Signup Card */
+.signup-container {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    border-radius: 18px;
+    padding: 45px 40px;
+    width: 360px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    text-align: center;
+}
+
+/* Title */
+.signup-container h2 {
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Input Fields */
+.signup-container input {
+    width: 90%;
+    padding: 12px 14px;
+    margin: 12px 0;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.signup-container input::placeholder {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.signup-container input:focus {
+    border-color: #aaa;
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
+}
+
+/* Button */
+.signup-container button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #3a7bd5, #3a6073);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 18px;
+    transition: all 0.3s ease;
+}
+
+.signup-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(58, 123, 213, 0.35);
+}
+
+/* Footer Text */
+.signup-container p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.signup-container a {
+    color: #3a7bd5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup-container a:hover {
+    text-decoration: underline;
+}

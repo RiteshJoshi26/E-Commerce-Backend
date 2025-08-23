@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Cart</title>
+  <link rel="stylesheet" href="/stylesheet/cart.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>🛍️ My Cart</h1>
+
+    <!-- Cart Items -->
+    <div id="cart-items" class="cart-items">
+      <% if (cartItems.length===0) { %>
+        <p>Your cart is empty!</p>
+        <% } else { %>
+          <% cartItems.forEach(item=> { %>
+            <div class="cart-item">
+              <img src="<%= item.bag.imgurl %>" alt="<%= item.bag.bagName %>">
+              <div class="item-details">
+                <h3>
+                  <%= item.bag.bagName %>
+                </h3>
+                <p class="brand">
+                  <%= item.bag.brand || "Premium Brand" %>
+                </p>
+                <p class="price">₹<%= item.bag.price %>
+                </p>
+              </div>
+              <div class="item-actions">
+                <div class="quantity">
+                  <!-- decrease -->
+                  <form action="/profile/cart/decrease/<%= item.bag._id %>" method="post" style="display:inline;">
+                    <button type="submit" class="decrease">−</button>
+                  </form>
+
+                  <span class="qty">
+                    <%= item.quantity %>
+                  </span>
+
+                  <!-- increase -->
+                  <form action="/profile/cart/increase/<%= item.bag._id %>" method="post" style="display:inline;">
+                    <button type="submit" class="increase">+</button>
+                  </form>
+                </div>
+
+                <!-- remove -->
+                <form action="/profile/removefromcart/<%= item.bag._id %>" method="post">
+                  <button type="submit" class="remove">Remove</button>
+                </form>
+              </div>
+            </div>
+            <% }) %>
+              <% } %>
+    </div>
+
+    <!-- Cart Summary -->
+    <div class="cart-summary">
+      <h2>Cart Summary</h2>
+      <p><strong>Total Items:</strong> <span id="total-items">
+          <%= cartItems.reduce((sum, i)=> sum + i.quantity, 0) %>
+        </span></p>
+      <p><strong>Total Price:</strong> ₹<span id="total-price">
+          <%= cartItems.reduce((sum, i)=> sum + i.bag.price * i.quantity, 0) %>
+        </span></p>
+      <button class="checkout">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <script src="/javascript/cart.js"></script>
+</body>
+
+</html>

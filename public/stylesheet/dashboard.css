@@ -1,0 +1,153 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f0a500;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    background: linear-gradient(135deg, #fefefe, #f4f4f4);
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* Bag Section */
+.bag-list {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.bag-list h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #111;
+}
+
+.bag-grid {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 1.5rem;
+}
+
+.bag-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 0.8rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 260px;
+    /* Limit card width */
+    margin: auto;
+    /* Center cards in grid */
+}
+
+.bag-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.bag-card img {
+    width: 100%;
+    height: 160px;
+    /* Smaller height */
+    object-fit: cover;
+    /* Keeps aspect ratio */
+    border-radius: 8px;
+}
+
+.bag-card h3 {
+    margin: 0.6rem 0 0.2rem;
+    font-size: 1rem;
+    color: #222;
+}
+
+.bag-card p {
+    font-weight: bold;
+    color: #f0a500;
+    margin-bottom: 0.6rem;
+}
+
+.add-btn {
+    background: #f0a500;
+    border: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.add-btn:hover {
+    background: #d99000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .bag-card img {
+        height: 150px;
+    }
+}

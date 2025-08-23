@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Add Bag</title>
+    <link rel="stylesheet" href="/stylesheet/addbag.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">MyStore Admin</div>
+        <ul class="nav-links">
+            <li><a href="" onclick="location.reload()">Home</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Panel -->
+    <div class="admin-container">
+        <!-- Form Section -->
+        <section class="form-section">
+            <div class="form-container">
+                <h2>Add a New Bag</h2>
+                <form id="bagForm" method="post" action="/admin/bag">
+                    <input type="text" id="bagName" placeholder="Bag Name" name="bagName" required>
+                    <input type="url" id="bagImg" placeholder="Image URL" name="imgurl" required>
+                    <input type="number" id="bagPrice" placeholder="Price ($)" name="price" required>
+                    <button type="submit">Add Bag</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Bag Management Section -->
+        <section class="bag-list">
+            <h2>Manage Bags</h2>
+            <div class="bag-grid" id="bagGrid">
+                <!-- Demo Bag -->
+                <% showBag.forEach(bag=> { %>
+                    <div class="bag-card">
+                        <img src="<%= bag.imgurl %>" alt="Leather Bag">
+                        <h3>
+                            <%= bag.bagName %>
+                        </h3>
+                        <p>$<%= bag.price %>
+                        </p>
+                        <div class="bag-actions">
+                               <a href="/admin/editbag/<%= bag._id %>">
+                                   <button class="edit-btn">Edit</button>
+                               </a> 
+                            <!-- Delete Form -->
+                            <form action="/admin/delbag/<%= bag._id %>" method="post" style="display:inline;">
+                                <button type="submit" class="delete-btn">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
