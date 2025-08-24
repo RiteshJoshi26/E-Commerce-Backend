@@ -24,15 +24,3 @@ This project handles user authentication, admin access, product management (bags
 
 ---
 
-## 📂 Project Structure
-ecommerce-backend/
-│── config/ # Database connection
-│── controllers/ # Request handlers
-│── middleware/ # Auth middlewares
-│── models/ # Mongoose models (User, Bag, Cart)
-│── routes/ # Express routes
-│── views/ # EJS templates (if using server-side rendering)
-│── public/ # Static files (CSS, images, JS)
-│── app.js # Main entry point
-│── package.json
-│── .env.example # Example environment variables
