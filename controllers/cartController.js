@@ -67,31 +67,6 @@ async function showCart(req, res) {
   }
 }
 
-async function removeFromCart(req, res) {
-  try {
-    const userId = req.user.id || req.user._id;
-    const bagId = new mongoose.Types.ObjectId(req.params.id); // ensure ObjectId
-
-    // Sirf user ke cart ke items array se bag remove karna hai
-    const cart = await Cart.findOneAndUpdate(
-      { user: userId },
-      { $pull: { items: { bag: bagId } } }, // 👈 items se delete
-      { new: true }
-    ).populate("items.bag");
-
-    if (!cart) {
-      console.log("❌ User ka cart nahi mila:", userId);
-      return res.redirect("/profile/cart");
-    }
-
-    console.log("🟢 Bag user ke cart se remove hogaya:", bagId);
-    res.redirect("/profile/cart");
-  } catch (err) {
-    console.error("❌ Remove Error:", err);
-    res.status(500).send("Error removing from cart");
-  }
-}
-
 async function increaseQuantity(req, res) {
   try {
     const userId = req.user.id || req.user._id;
@@ -143,7 +118,6 @@ module.exports = {
   showDashboard,
   showCart,
   addToCart,
-  removeFromCart,
   increaseQuantity,
   decreaseQuantity,
 };
